@@ -303,7 +303,7 @@ Product Render Coming Soon
 Join the Fuertivo waitlist and follow our journey as we build the future of athletic technology.
 </p>
 
-<form action="https://formspree.io/f/mpqgwvlk" method="POST">
+<form id="waitlist-form" action="https://formspree.io/f/mpqgwvlk" method="POST">
 
     <input
         type="email"
@@ -317,6 +317,10 @@ Join the Fuertivo waitlist and follow our journey as we build the future of athl
     </button>
 
 </form>
+
+<p id="success-message" style="display:none; color:lightgreen; margin-top:20px;">
+    ✅ You're on the list. We'll keep you updated.
+</p>
 
 </section>
 
@@ -333,6 +337,28 @@ Performance Technology for Athletes
 © 2026 Fuertivo
 
 </footer>
+
+<script>
+const form = document.getElementById("waitlist-form");
+const successMessage = document.getElementById("success-message");
+
+form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+
+    form.style.display = "none";
+    successMessage.style.display = "block";
+});
+</script>
 
 </body>
 </html>
