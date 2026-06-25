@@ -36,9 +36,18 @@ header{
 }
 
 .logo{
-    font-size:30px;
-    font-weight:bold;
-    letter-spacing:2px;
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:55px;
+    width:auto;
+    transition:transform .3s ease;
+}
+
+.logo img:hover{
+    transform:scale(1.05);
 }
 
 nav a{
@@ -76,6 +85,13 @@ nav a{
     font-size:18px;
 }
 
+.hero-logo{
+    width:220px;
+    height:auto;
+    margin-bottom:35px;
+    animation:fadeUp .8s ease-out forwards;
+}
+    
 .button{
     display:inline-block;
     margin-top:40px;
@@ -279,7 +295,9 @@ section.visible {
 
 <header>
 
-<div class="logo">FUERTIVO</div>
+<div class="logo">
+    <img src="logo.png" alt="Fuertivo Logo">
+</div>
 
 <nav>
 <a href="#about">About</a>
@@ -292,6 +310,8 @@ section.visible {
 <section class="hero">
 
 <div>
+
+<img class="hero-logo" src="logo.png" alt="Fuertivo Logo">
 
 <h1>Run without touching your phone.</h1>
 
